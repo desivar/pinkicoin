@@ -51,33 +51,25 @@ Pinky's Coins is a classic arcade-style game developed using Pygame.  The object
 -   **Down Arrow:** Move Pinky down.
 -   **'r' Key (Game Over Screen):** Restart the game.
 
-## Screenshots
+## Screenshot
 
-*(Include screenshots of your game here.  Use the `![Screenshot 1](path/to/screenshot1.png)` format)*
 
-![Gameplay Screenshot](screenshots/gameplay.png)
-![Game Over Screenshot](screenshots/gameover.png)
+
+![Gameplay Screenshot](https://github.com/desivar/WDD-330-My-Portfolio/blob/main/images/frontpink2.png)
+![Game Over Screenshot](https://github.com/desivar/WDD-330-My-Portfolio/blob/main/images/pinkiscreen.png)
 
 ## Technologies Used
 
 -   Python 3
 -   Pygame
 
-## Contributing
 
-Contributions are welcome!  Please feel free to submit pull requests or open issues for bug fixes, feature requests, or suggestions.
-
-## License
-
-*(Choose a license and add it here.  For example:)*
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
--   Background music: *[Credit the music creator here if needed]*
--   Sound effects: *[Credit the sound effect creators here if needed]*
--   Special thanks to *[Christopher, my son who explain me basic concepst about a video game]*
+-   Background music: *[https://pixabay.com/music/modern-classical-piano-melody-277609/]*
+-   Sound effects: *[https://pixabay.com/sound-effects/search/coin/]*
+-   Special thanks to *Christopher, my son who explain me basic concepst about a video game*
 
 1.  Make sure you have Python 3 installed. You can download it from [python.org](https://www.python.org/).
 2.  Install Pygame:
