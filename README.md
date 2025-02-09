@@ -92,3 +92,9 @@ Pinky's Coins is a classic arcade-style game developed using Pygame.  The object
 -   **Up Arrow:** Move Pinky up.
 -   **Down Arrow:** Move Pinky down.
 -   **'r' Key (Game Over Screen):** Restart the game.
+-   # Future Work
+
+{Make a list of things that you need to fix, improve, and add in the future.}
+* Item 1 The game got aditional assets to make improvemnts.
+* Item 2 Instead of the cube you could use a wizard, for example.
+* Item 3 you could expand by adding levels, or more coins, I have teh wizard and pixeled coins gold, silver and bronze to expand the game.
