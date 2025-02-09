@@ -2,19 +2,6 @@
 
 A simple and fun 2D game where Pinky collects coins while avoiding a pesky enemy!
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [How to Play](#how-to-play)
-- [Features](#features)
-- [Installation](#installation)
-- [Controls](#controls)
-- [Screenshots](#screenshots)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-
 ## Introduction
 
 Pinky's Coins is a classic arcade-style game developed using Pygame.  The objective is to guide Pinky and collect as many coins as possible while avoiding the red square enemy.  Collecting coins increases your score, while colliding with the enemy will cause you to lose a life.  The game ends when you run out of lives.
