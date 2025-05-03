@@ -3,7 +3,7 @@ import pygame
 from coin import coin
 
 
-class Level:
+class level:
     def __init__(self, player):
         self.player = player
         self.player_group = pygame.sprite.GroupSingle(player)
