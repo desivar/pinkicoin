@@ -2,6 +2,7 @@
 import pygame
 from settings import GRAVITY, PLAYER_SPEED, JUMP_POWER
 
+
 class player(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
