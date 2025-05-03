@@ -7,7 +7,7 @@ class player(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
         self.image = pygame.image.load(
-            "assets/images/pinky.png"
+            "assets/images/pinkygirl.jpg"
         ).convert_alpha()
         self.rect = self.image.get_rect(topleft=pos)
         self.vel = pygame.Vector2(0, 0)
