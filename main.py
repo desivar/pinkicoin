@@ -8,7 +8,7 @@ except ImportError:
         "exists in the same directory as 'main.py'."
     )
 from player import player
-from coin import Coin
+from coin import coin
 from levels.level import level
 
 pygame.init()
