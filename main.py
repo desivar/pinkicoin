@@ -7,9 +7,9 @@ except ImportError:
         "The 'settings' module could not be found. Ensure 'settings.py' "
         "exists in the same directory as 'main.py'."
     )
-from player import Player
+from player import player
 from coin import Coin
-from levels.level import Level
+from levels.level import level
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -17,8 +17,8 @@ clock = pygame.time.Clock()
 running = True
 
 # Game objects
-player = Player((100, 400))
-level = Level(player)
+player = player((100, 400))
+level = level(player)
 
 while running:
     for event in pygame.event.get():
