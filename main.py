@@ -1,6 +1,9 @@
 # main.py
 import pygame
-from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FPS, COLOR_BG
+try:
+    from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FPS, COLOR_BG
+except ImportError:
+    raise ImportError("The 'settings' module could not be found. Ensure 'settings.py' exists in the same directory as 'main.py'.")
 from player import Player
 from coin import Coin
 from assets.levels.level import Level

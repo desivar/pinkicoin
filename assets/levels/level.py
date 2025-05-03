@@ -1,6 +1,6 @@
 # level.py
 import pygame
-from coin import Coin
+from ..coin import Coin
 
 class Level:
     def __init__(self, player):
