@@ -2,6 +2,7 @@ import pygame
 from settings import TILE_SIZE
 from coin import Coin
 
+
 class Level:
     def __init__(self, level_data, player):
         self.level_data = level_data

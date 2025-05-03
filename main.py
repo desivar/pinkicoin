@@ -1,18 +1,23 @@
 import pygame
-from settings import *
+from settings import screen_width, screen_height, tile_size, fps
 from player import player
 from coin import coin
-from level import level
+try:
+    from assets.levels.level import level
+except ImportError as e:
+    print(f"Error importing level module: {e}")
+    pygame.quit()
+    exit()
 
 pygame.init()
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Pinky's Coins")
 clock = pygame.time.Clock()
 
 # Load Background
 try:
     background_image = pygame.image.load('assets/images/background/clouds1.jpg').convert()
-    background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
 except FileNotFoundError as e:
     print(f"Error loading background: {e}")
     pygame.quit()
@@ -26,7 +31,7 @@ except pygame.error as e:
     print(f"Error loading music: {e}")
 
 # Player setup
-player = player((100, SCREEN_HEIGHT - 2 * TILE_SIZE))
+player = player((100, screen_height - 2 * tile_size))
 
 # Level data (temporary - we'll expand this)
 level_data = [
@@ -61,6 +66,6 @@ while running:
     player.draw(screen)
 
     pygame.display.flip()
-    clock.tick(FPS)
+    clock.tick(fps)
 
 pygame.quit()
