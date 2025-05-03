@@ -9,7 +9,7 @@ except ImportError:
     )
 from player import player
 from coin import coin
-from levels.level import level
+from assets.levels.level import level
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
