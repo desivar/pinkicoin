@@ -1,5 +1,7 @@
 # coin.py
 import pygame
+
+
 class Coin(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
