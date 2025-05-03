@@ -2,6 +2,7 @@ import pygame
 from settings import TILE_SIZE
 from coin import Coin  # Import the Coin class
 
+
 class Level:
     def __init__(self, level_data, player):
         self.level_data = level_data
@@ -34,15 +35,16 @@ class Level:
                     # TODO: Implement Wizard (likely as an Enemy)
                     pass
                 elif tile_char == 'P':
-                    self.player.rect.topleft = (x, y) # Set player start position
+                    self.player.rect.topleft = (x, y)  # Set player start position
 
     def update(self):
         # Update level elements (e.g., moving platforms, enemies)
-        self.coins.update() # If coins have animations
+        self.coins.update()  # If coins have animations
 
     def draw(self, surface):
         self.tiles.draw(surface)
         self.coins.draw(surface)
+
 
 class Tile(pygame.sprite.Sprite):
     def __init__(self, image_path, pos):
@@ -54,3 +56,4 @@ class Tile(pygame.sprite.Sprite):
             pygame.quit()
             exit()
         self.rect = self.image.get_rect(topleft=pos)
+        

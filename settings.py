@@ -1,10 +1,10 @@
-# settings.py
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-FPS = 60
+screen_width = 800
+screen_height = 600
+fps = 60
 
-GRAVITY = 0.5
-PLAYER_SPEED = 5
-JUMP_POWER = 10
+gravity = 0.5
+player_speed = 5
+jump_power = 10
 
-COLOR_BG = (255, 230, 250)
+color_bg = (255, 230, 250)
+tile_size = 32  # If you're using tiles
