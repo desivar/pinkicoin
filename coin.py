@@ -8,3 +8,4 @@ class Coin(pygame.sprite.Sprite):
             "assets/images/coin.png"
         ).convert_alpha()
         self.rect = self.image.get_rect(center=pos)
+        
