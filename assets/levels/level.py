@@ -1,6 +1,6 @@
 # level.py
 import pygame
-from coin import Coin
+from coin import coin
 
 
 class Level:
@@ -10,7 +10,7 @@ class Level:
 
         # Example coin
         self.coins = pygame.sprite.Group()
-        self.coins.add(Coin((400, 300)))
+        self.coins.add(coin((400, 300)))
 
     def update(self, screen):
         self.coins.draw(screen)
