@@ -1,7 +1,6 @@
 import pygame
 from settings import TILE_SIZE
-from coin import Coin  # Import the Coin class
-
+from coin import Coin
 
 class Level:
     def __init__(self, level_data, player):
@@ -20,13 +19,20 @@ class Level:
                     tile = Tile('assets/images/tiles/ground.png', (x, y))
                     self.tiles.add(tile)
                 elif tile_char == 'C':
-                    coin = Coin((x + TILE_SIZE // 2, y + TILE_SIZE // 2), 'silver')
+                    coin_x = x + TILE_SIZE // 2
+                    coin_y = y + TILE_SIZE // 2
+                    coin_pos = (coin_x, coin_y)
+                    coin = Coin(coin_pos, 'silver')
                     self.coins.add(coin)
                 elif tile_char == 'G':
-                    coin = Coin((x + TILE_SIZE // 2, y + TILE_SIZE // 2), 'gold')
+                    coin_pos = (x + TILE_SIZE // 2, y + TILE_SIZE // 2)
+                    coin = Coin(coin_pos, 'gold')
                     self.coins.add(coin)
                 elif tile_char == 'B':
-                    coin = Coin((x + TILE_SIZE // 2, y + TILE_SIZE // 2), 'bronze')
+                    coin = Coin(
+                        (x + TILE_SIZE // 2, y + TILE_SIZE // 2),
+                        'bronze'
+                    )
                     self.coins.add(coin)
                 elif tile_char == 'H':
                     # TODO: Implement Heart Gift
@@ -35,7 +41,7 @@ class Level:
                     # TODO: Implement Wizard (likely as an Enemy)
                     pass
                 elif tile_char == 'P':
-                    self.player.rect.topleft = (x, y)  # Set player start position
+                    self.player.rect.topleft = (x, y)  # Set player start
 
     def update(self):
         # Update level elements (e.g., moving platforms, enemies)
@@ -56,4 +62,3 @@ class Tile(pygame.sprite.Sprite):
             pygame.quit()
             exit()
         self.rect = self.image.get_rect(topleft=pos)
-        
