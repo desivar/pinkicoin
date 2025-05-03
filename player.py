@@ -1,6 +1,6 @@
 # player.py
 import pygame
-from Settings import GRAVITY, PLAYER_SPEED, JUMP_POWER
+from settings import GRAVITY, PLAYER_SPEED, JUMP_POWER
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos):
