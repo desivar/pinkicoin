@@ -1,20 +1,22 @@
 import pygame
 import sys
 import os
-from settings import screen_width, screen_height, tile_size, fps, game_title
+from settings import (
+    screen_width, screen_height, tile_size, fps, game_title
+)
 from player import player
 from coin import coin  # Import the Coin class
 
+
 try:
-    from assets.levels.level import Level
+    from assets.levels.level import level
 except ImportError as e:
     print(f"Error importing level module: {e}")
     pygame.quit()
-    sys.exit()
+
 
 class Game:
-    """Main game class to manage the game loop and resources"""
-    
+    """Main game class to manage the game loop and resources""" 
     def __init__(self):
         """Initialize the game, including pygame, display, and game resources"""
         # Initialize pygame
@@ -37,7 +39,9 @@ class Game:
         self.load_assets()
         
         # Initialize game objects
-        self.player = player((100, screen_height - 2 * tile_size))
+        self.player = player(
+            (100, screen_height - 2 * tile_size)
+        )
         
         # Preload coin images
         coin.preload_images()
@@ -50,9 +54,13 @@ class Game:
         
     def load_assets(self):
         """Load game assets like images and sounds"""
-        # Load background
+        self.background_image = pygame.image.load(
+            'assets/images/background/clouds1.jpg'
+        ).convert()
         try:
-            self.background_image = pygame.image.load('assets/images/background/clouds1.jpg').convert()
+            self.background_image = pygame.image.load(
+                'assets/images/background/clouds1.jpg'
+            ).convert()
             self.background_image = pygame.transform.scale(
                 self.background_image, (screen_width, screen_height)
             )
@@ -60,17 +68,27 @@ class Game:
             print(f"Error loading background: {e}")
             self.background_image = self.create_fallback_background()
         
-        # Load sounds
+            pygame.mixer.music.load(
+                'assets/sounds/piano-melody-277609.mp3'
+            )
         self.sounds = {}
         try:
             # Load music
             pygame.mixer.music.load('assets/sounds/piano-melody-277609.mp3')
             pygame.mixer.music.set_volume(0.5)  # Set to 50% volume
-            
-            # Load sound effects
-            self.sounds['coin_collect'] = pygame.mixer.Sound('assets/sounds/coin_collect.wav')
+            self.sounds['coin_collect'] = pygame.mixer.Sound(
+                'assets/sounds/coin_collect.wav'
+            )
+            self.sounds['jump'] = pygame.mixer.Sound(
+                'assets/sounds/jump.wav'
+            )
+            self.sounds['level_complete'] = pygame.mixer.Sound(
+                'assets/sounds/level_complete.wav'
+            )
             self.sounds['jump'] = pygame.mixer.Sound('assets/sounds/jump.wav')
-            self.sounds['level_complete'] = pygame.mixer.Sound('assets/sounds/level_complete.wav')
+            self.sounds['level_complete'] = pygame.mixer.Sound(
+                'assets/sounds/level_complete.wav'
+            )
         except pygame.error as e:
             print(f"Error loading sounds: {e}")
     
