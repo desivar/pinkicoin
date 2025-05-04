@@ -1,7 +1,7 @@
 import pygame
 import os
 from settings import tile_size, TILE_MAPPING, COLOR_PLATFORM, COIN_VALUES, DEBUG
-from coin import Coin
+from coin import coin
 
 
 class Level:
@@ -63,7 +63,7 @@ class Level:
                     
                     # Create coin at center of tile
                     coin_pos = (x + tile_size // 2, y + tile_size // 2)
-                    coin = Coin(coin_pos, coin_type)
+                    coin = coin(coin_pos, coin_type)
                     self.coins.add(coin)
                     self.total_coins += 1
                 

@@ -12,9 +12,10 @@ except ImportError as e:
     pygame.quit()
     sys.exit()
 
+
 class Game:
     """Main game class to manage the game loop and resources"""
-    
+      
     def __init__(self):
         """Initialize the game, including pygame, display, and game resources"""
         # Initialize pygame
@@ -22,7 +23,9 @@ class Game:
         pygame.mixer.init()
         
         # Set up display
-        self.screen = pygame.display.set_mode((screen_width, screen_height))
+        self.screen = pygame.display.set_mode(
+            (screen_width, screen_height)
+        )
         pygame.display.set_caption(game_title)
         self.clock = pygame.time.Clock()
         
@@ -37,7 +40,9 @@ class Game:
         self.load_assets()
         
         # Initialize game objects
-        self.player = player((100, screen_height - 2 * tile_size))
+        self.player = player(
+            (100, screen_height - 2 * tile_size)
+        )
         
         # Preload coin images
         coin.preload_images()
@@ -50,7 +55,12 @@ class Game:
         
     def load_assets(self):
         """Load game assets like images and sounds"""
-        # Load background
+        self.background_image = pygame.image.load(
+                'assets/images/background/clouds1.jpg'
+            )
+        self.background_image = pygame.image.load(
+                'assets/images/background/clouds1.jpg'
+            ).convert()
         try:
             self.background_image = pygame.image.load('assets/images/background/clouds1.jpg').convert()
             self.background_image = pygame.transform.scale(
@@ -64,9 +74,15 @@ class Game:
         self.sounds = {}
         try:
             # Load music
-            pygame.mixer.music.load('assets/sounds/piano-melody-277609.mp3')
-            pygame.mixer.music.set_volume(0.5)  # Set to 50% volume
-            
+            self.sounds['coin_collect'] = pygame.mixer.Sound(
+                'assets/sounds/coin_collect.wav'
+            )
+            self.sounds['jump'] = pygame.mixer.Sound(
+                'assets/sounds/jump.wav'
+            )
+            self.sounds['level_complete'] = pygame.mixer.Sound(
+                'assets/sounds/level_complete.wav'
+            )
             # Load sound effects
             self.sounds['coin_collect'] = pygame.mixer.Sound('assets/sounds/coin_collect.wav')
             self.sounds['jump'] = pygame.mixer.Sound('assets/sounds/jump.wav')

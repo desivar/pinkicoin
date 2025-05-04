@@ -96,9 +96,9 @@ current_difficulty = DIFFICULTY_MEDIUM
 TILE_MAPPING = {
     '#': 'wall',        # Wall/platform
     ' ': 'empty',       # Empty space
-    'c': 'coin_bronze', # Bronze coin
-    's': 'coin_silver', # Silver coin
-    'g': 'coin_gold',   # Gold coin
+    'c': 'coin_bronze',      # Bronze coin
+    's': 'coin_silver',    # Silver coin
+    'g': 'coin_gold',      # Gold coin
     'e': 'enemy',       # Enemy
     'h': 'health',      # Health pickup
     'p': 'player',      # Player start position
